@@ -16,10 +16,7 @@
     </div>
 
     <div style="display: inline-block" ng-controller="PokemonCtrl">
-      <img src="{{selectedPokemon.picture}}" alt="">
-      <h1>{{selectedPokemon.id}}</h1>
-      <h1>{{selectedPokemon.identifier}}</h1>
-      <p>{{selectedPokemon.type}}</p>
+      <pokemon info="selectedPokemon"></pokemon>
     </div>
 
 
@@ -27,5 +24,6 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
   </body>
 </html>
