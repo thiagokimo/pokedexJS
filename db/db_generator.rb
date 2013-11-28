@@ -19,7 +19,14 @@ json = JSONBuilder::Compiler.generate do
     number number
     name name
     type types
-    sprite "http://img.pokemondb.net/sprites/black-white/normal/"+name.downcase+".png"
+
+    if number == "029" #Fix male nidoran sprite url
+      sprite "http://img.pokemondb.net/sprites/black-white/normal/nidoran-m.png"
+    elsif number == "032" #Fix female nidoran sprite url
+      sprite "http://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"
+    else
+      sprite "http://img.pokemondb.net/sprites/black-white/normal/"+name.downcase+".png"
+    end
   end
 end
 

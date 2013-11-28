@@ -6,9 +6,9 @@
   </head>
   <body ng-controller="IndexCtrl">
     <section id="pokemon-list-container">
-      <input class="pokemon-search-input" type="text" ng-model="name" placeholder="Type a name, number or type">
+      <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Type a name, number or type">
 
-      <ul class="pokemon-list" ng-repeat="pokemon in pokemonList | filter:name">
+      <ul class="pokemon-list" ng-repeat="pokemon in pokemonList | filter:query">
         <li ng-click="showPokemon(pokemon)">
           <p>{{pokemon.number}} - {{pokemon.name}}</p>
         </li>
