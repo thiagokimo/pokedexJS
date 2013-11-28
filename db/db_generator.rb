@@ -9,12 +9,14 @@ pokemons = doc.css(".infocard-tall")
 json = JSONBuilder::Compiler.generate do
 
   array pokemons do |pokemon|
+    number = pokemon.at_css("small:nth-child(3)").text
+    number[0] = '' #removes hash
     name = pokemon.at_css(".ent-name").text
     types = pokemon.css(".aside a").collect do |type|
       type.text
     end
 
-    number pokemon.at_css("small:nth-child(3)").text
+    number number
     name name
     type types
     sprite "http://img.pokemondb.net/sprites/black-white/normal/"+name.downcase+".png"
