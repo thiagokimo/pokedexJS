@@ -9,7 +9,7 @@
 
       <ul class="pokemon-list" ng-repeat="pokemon in pokemonList | filter:name">
         <li ng-click="showPokemon(pokemon)">
-          <p>{{pokemon.id}} - {{pokemon.identifier}}</p>
+          <p>{{pokemon.number}} - {{pokemon.name}}</p>
         </li>
       </ul>
     </section>
@@ -23,5 +23,6 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="js/directives.js"></script>
+    <script src="js/pokemonDB.js"></script>
   </body>
 </html>

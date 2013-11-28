@@ -22,7 +22,7 @@ json = JSONBuilder::Compiler.generate do
 end
 
 db = File.open("../js/pokemonDB.js", "w")
-# db.write("var db = ")
+db.write("var db = ")
 db.write(json);
-# db.write(";")
+db.write(";")
 db.close
