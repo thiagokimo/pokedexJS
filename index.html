@@ -1,26 +1,25 @@
 <html ng-app="pokedexjs">
   <head>
-
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body ng-controller="IndexCtrl">
+    <section id="pokemon-list-container">
+      <input class="pokemon-search-input" type="text" ng-model="name" placeholder="Search pokemon">
 
-
-    <div style="display: inline-block">
-      <input type="text" ng-model="name" placeholder="Search pokemon">
-
-      <ul ng-repeat="pokemon in pokemonList | filter:name">
+      <ul class="pokemon-list" ng-repeat="pokemon in pokemonList | filter:name">
         <li ng-click="showPokemon(pokemon)">
           <p>{{pokemon.id}} - {{pokemon.identifier}}</p>
         </li>
       </ul>
-    </div>
+    </section>
 
-    <div style="display: inline-block" ng-controller="PokemonCtrl">
+    <section id="pokemon-detail" ng-controller="PokemonCtrl">
       <img src="{{selectedPokemon.picture}}" alt="">
       <h1>{{selectedPokemon.id}}</h1>
       <h1>{{selectedPokemon.identifier}}</h1>
       <p>{{selectedPokemon.type}}</p>
-    </div>
+    </section>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>

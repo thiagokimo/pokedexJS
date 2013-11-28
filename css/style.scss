@@ -1,0 +1,38 @@
+body {
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+#pokemon-list-container {
+  float: left;
+  width: 20%;
+  min-width: 240px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #222;
+  color: #fff;
+
+  .pokemon-search-input {
+    display: block;
+    width: 230px;
+    margin: 10px auto;
+    height: 25px;
+    background-color: #f1f1f1;
+  }
+
+  .pokemon-list {
+    width: 230px;
+    margin: 0 auto;
+
+    li {
+      padding: 10px 5px;
+    }
+  }
+}
+
+#pokemon-detail {
+  float: left;
+  width: 80%;
+  height: 100%;
+  padding: 40px;
+}
