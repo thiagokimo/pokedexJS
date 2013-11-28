@@ -1,4 +1,6 @@
 <img src="{{pokemon.picture}}" alt="">
 <h1>{{pokemon.id}}</h1>
 <h1>{{pokemon.identifier}}</h1>
-<h1>{{pokemon.type}}</h1>
+<div class="pokemon-types" ng-repeat="type in pokemon.type">
+  <div class="pokemon-type {{type}}">{{type}}</div>
+</div>

@@ -6,6 +6,7 @@
 
 body {
   width: 100%;
+  font-family: 'Helvetica', sans-serif;
   background-color: #f1f1f1;
 }
 
@@ -42,4 +43,23 @@ body {
   width: 70%;
   height: 100%;
   padding: 40px;
+}
+
+
+.pokemon-types {
+  .pokemon-type {
+    overflow: hidden;
+    float: left;
+    padding: 5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+
+  }
+  .grass {
+    background-color: green;
+  }
+
+  .poison {
+    background-color: purple;
+  }
 }
