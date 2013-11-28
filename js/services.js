@@ -7,11 +7,13 @@ app.service("pokemonService", function () {
   var db = [
     {
       "id": 1,
-      "identifier": "bulbasaur"
+      "identifier": "bulbasaur",
+      "type": ["grass", "poison"]
     },
     {
       "id": 2,
-      "identifier": "ivysaur"
+      "identifier": "ivysaur",
+      "type": ["grass", "poison"]
     }
   ];
 });

@@ -4,13 +4,24 @@
   </head>
   <body ng-controller="IndexCtrl">
 
-    <input type="text" ng-model="name" placeholder="Search pokemon">
 
-    <ul ng-repeat="pokemon in pokemonList | filter:name">
-      <li>
-        <p>{{pokemon.id}} - {{pokemon.identifier}}</p>
-      </li>
-    </ul>
+    <div style="display: inline-block">
+      <input type="text" ng-model="name" placeholder="Search pokemon">
+
+      <ul ng-repeat="pokemon in pokemonList | filter:name">
+        <li ng-click="showPokemon(pokemon)">
+          <p>{{pokemon.id}} - {{pokemon.identifier}}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div style="display: inline-block">
+      <img src="" alt="">
+      <h1>{{pokemon.id}}</h1>
+      <h1>{{pokemon.identifier}}</h1>
+      <p>{{pokemon.type}}</p>
+    </div>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     <script src="js/app.js"></script>
