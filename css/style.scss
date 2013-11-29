@@ -17,6 +17,7 @@ body {
 
 input[type=text] {
   outline: 0;
+  border: 0;
 }
 
 .wrapper {
@@ -73,9 +74,9 @@ header {
 
 #pokemon-detail {
   float: left;
-  width: 70%;
-  height: 100%;
-  padding: 40px;
+  width: 470px;
+  height: 609px;
+  // padding: ;
 }
 
 
