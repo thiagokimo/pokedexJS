@@ -1,4 +1,4 @@
-app.directive('pokemon', function () {
+app.directive('pokemon', function (pokemonService) {
   return {
     restrict: 'E',
     scope: {
