@@ -32,7 +32,12 @@ header {
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  border-radius: 7px; }
+  border-radius: 7px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
   #main-container .section-header {
     background-color: #262626;
     height: 50px;
@@ -40,25 +45,52 @@ header {
     overflow: hidden;
     color: #e5e5e5; }
     #main-container .section-header .input-container {
-      width: 200px;
+      width: 300px;
       height: 30px;
       margin: 10px auto; }
       #main-container .section-header .input-container input[type=text] {
         height: 30px;
-        width: 174px;
+        width: 274px;
         font-size: 20px;
         background-color: #262626;
-        color: #e5e5e5;
+        color: #fff;
         font-weight: 100;
         padding: 5px 0;
         outline: 0;
-        border: 0; }
+        border: 0;
+        border-bottom: solid 1px #fff; }
 
 .section-main {
   background-color: #fff;
   padding: 20px; }
-  .section-main .pokemon-list li {
-    display: inline-block; }
+  .section-main .pokemon-list .pokemon {
+    display: inline-block;
+    cursor: pointer;
+    position: relative; }
+    .section-main .pokemon-list .pokemon .tooltip-info {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: -10px;
+      left: 0;
+      font-size: 12px;
+      line-height: 18px;
+      color: white;
+      background-color: #262626;
+      opacity: 0;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .section-main .pokemon-list .pokemon:hover .tooltip-info {
+      opacity: 1;
+      bottom: 0; }
 
 .pokemon-types .normal {
   background-color: #8a8a59; }

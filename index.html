@@ -13,13 +13,14 @@
       <div id="main-container">
         <div class="section-header">
           <div class="input-container">
-            <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Search...">
+            <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Name, number or type">
           </div>
         </div>
         <div class="section-main">
           <ul class="pokemon-list">
-            <li ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
-              <img src="{{pokemon.sprite}}" alt="{{pokemon.number}} - {{pokemon.name}}"></p>
+            <li class="pokemon" ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
+              <img src="{{pokemon.sprite}}" alt="">
+              <div class="tooltip-info">{{pokemon.number}} - {{pokemon.name}}</div>
             </li>
           </ul>
         </div>

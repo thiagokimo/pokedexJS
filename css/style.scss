@@ -2,6 +2,16 @@ $main-bg: #e5e5e5;
 $primary: #b50826;
 $secondary: #262626;
 
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -47,6 +57,7 @@ header {
   margin-bottom: 50px;
   padding: 30px 0;
   @include border-radius(7px);
+  @include transition(all, 0.2s, ease-in-out);
 
   .section-header {
     background-color: $secondary;
@@ -56,20 +67,21 @@ header {
     color: $main-bg;
 
     .input-container {
-      width: 200px;
+      width: 300px;
       height: 30px;
       margin: 10px auto;
 
       input[type=text] {
         height: 30px;
-        width: 174px;
+        width: 274px;
         font-size: 20px;
         background-color: $secondary;
-        color: $main-bg;
+        color: #fff;
         font-weight: 100;
         padding: 5px 0;
         outline: 0;
         border: 0;
+        border-bottom: solid 1px #fff;
       }
     }
   }
@@ -82,8 +94,33 @@ header {
   padding: 20px;
 
   .pokemon-list {
-    li {
+    .pokemon {
       display: inline-block;
+      cursor: pointer;
+      position: relative;
+
+      .tooltip-info {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -10px;
+        left: 0;
+        font-size: 12px;
+        line-height: 18px;
+        color: white;
+        background-color: $secondary;
+        opacity: 0;
+
+        @include border-radius(3px);
+        @include transition(all, 0.2s, ease-in-out)
+      }
+
+      &:hover {
+        .tooltip-info {
+          opacity: 1;
+          bottom: 0;
+        }
+      }
     }
   }
 }
