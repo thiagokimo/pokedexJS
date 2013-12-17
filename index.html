@@ -1,36 +1,6 @@
-<html ng-app="pokedexjs">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body ng-controller="IndexCtrl">
-    <div class="wrapper">
-      <header>
-        <h1 class="podekexjs-title">pokedexJS</h1>
-      </header>
-
-      <div id="pokemon-list-container">
-        <div class="input-container">
-          <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Type a name, number or type">
-        </div>
-        <ul class="pokemon-list">
-          <li ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
-            <p>{{pokemon.number}} - {{pokemon.name}}</p>
-          </li>
-        </ul>
-      </div>
-
-      <div id="pokemon-detail" ng-controller="PokemonCtrl">
-        <pokemon info="selectedPokemon"></pokemon>
-      </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/directives.js"></script>
-    <script src="db/pokemonDB.js"></script>
+<html>
+  <head></head>
+  <body>
+    <a href="/architecture-examples/angularjs">AngularJS</a>
   </body>
 </html>

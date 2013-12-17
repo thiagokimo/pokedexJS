@@ -4,6 +4,6 @@ app.directive('pokemon', function (pokemonService) {
     scope: {
       pokemon: "=info"
     },
-    templateUrl: '../pokemon-info.html'
+    templateUrl: 'pokemon-info.html'
   };
 });
