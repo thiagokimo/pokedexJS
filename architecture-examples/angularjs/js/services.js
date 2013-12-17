@@ -1,5 +1,10 @@
 app.service("pokemonService", function () {
 
+  this.getRandomPokemon = function () {
+    var randomNumber = Math.floor(Math.random() * db.length + 1);
+    return db[randomNumber];
+  }
+
   this.getPokemonList = function () {
     return db;
   };
