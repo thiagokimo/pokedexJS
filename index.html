@@ -7,18 +7,22 @@
   <body ng-controller="IndexCtrl">
     <div class="wrapper">
       <header>
-        <h1 class="podekexjs-title">pokedexJS</h1>
+        <h1 class="podekexjs-title">pokedex<span class="dot">.</span>js</h1>
       </header>
 
-      <div id="pokemon-list-container">
-        <div class="input-container">
-          <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Type a name, number or type">
+      <div id="main-container">
+        <div class="section-header">
+          <div class="input-container">
+            <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Search...">
+          </div>
         </div>
-        <ul class="pokemon-list">
-          <li ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
-            <p>{{pokemon.number}} - {{pokemon.name}}</p>
-          </li>
-        </ul>
+        <div class="section-main">
+          <ul class="pokemon-list">
+            <li ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
+              <img src="{{pokemon.sprite}}" alt="{{pokemon.number}} - {{pokemon.name}}"></p>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div id="pokemon-detail" ng-controller="PokemonCtrl">
