@@ -38,7 +38,7 @@ end
 json = JSONBuilder::Compiler.generate do
 
   array pokemons do |pokemon|
-    number = (remove_hash_from(pokemon.at_css("small:nth-child(3)").text)).to_i
+    number = (remove_hash_from(pokemon.at_css("small:nth-child(3)").text))
     name = pokemon.at_css(".ent-name").text
     types = pokemon.css(".aside a").collect do |type|
       type.text
@@ -51,13 +51,13 @@ json = JSONBuilder::Compiler.generate do
     type types
     evolution get_evolution_of(pokemon)
 
-    if number == 29 #Fix male nidoran sprite url
+    if number == "029" #Fix male nidoran sprite url
       sprite "http://img.pokemondb.net/sprites/black-white/normal/nidoran-m.png"
-    elsif number == 32 #Fix female nidoran sprite url
+    elsif number == "032" #Fix female nidoran sprite url
       sprite "http://img.pokemondb.net/sprites/black-white/normal/nidoran-f.png"
-    elsif number == 83 #Fix farfetch'd sprite url
+    elsif number == "083" #Fix farfetch'd sprite url
       sprite "http://img.pokemondb.net/sprites/black-white/normal/farfetchd.png"
-    elsif number == 122 #Fix Mr. Mime sprite url
+    elsif number == "122" #Fix Mr. Mime sprite url
       sprite "http://img.pokemondb.net/sprites/black-white/normal/mr-mime.png"
     else
       sprite "http://img.pokemondb.net/sprites/black-white/normal/"+name.downcase+".png"
