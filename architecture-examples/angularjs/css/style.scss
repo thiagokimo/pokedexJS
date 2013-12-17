@@ -1,5 +1,24 @@
-$main-bg: #1a1f21;
-$secondary: #c0ccd0;
+$main-bg: #e5e5e5;
+$primary: #b50826;
+$secondary: #262626;
+
+
+@mixin transition($transition-property, $transition-time, $method) {
+  -webkit-transition: $transition-property $transition-time $method;
+  -moz-transition: $transition-property $transition-time $method;
+  -ms-transition: $transition-property $transition-time $method;
+  -o-transition: $transition-property $transition-time $method;
+  transition: $transition-property $transition-time $method;
+}
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
 
 * {
   -webkit-box-sizing: border-box;
@@ -9,90 +28,123 @@ $secondary: #c0ccd0;
 
 body {
   width: 100%;
+  height: 100%;
   font-family: 'Lato', sans-serif;
   background-color: $main-bg;
   color: $secondary !important;
   font-weight: 300;
 }
 
-input[type=text] {
-  outline: 0;
-  border: 0;
-}
-
 .wrapper {
-  width: 700px;
-  height: 700px;
-  margin: 0 auto;
+  width: 616px;
+  margin: 0 auto 70px auto;
   overflow: hidden;
 }
 
 header {
+  text-align: center;
   .podekexjs-title {
+    margin: 32px 0;
     font-size: 36px;
-    line-height: 70px;
-    color: $secondary;
+    .dot {
+      color: $primary;
+    }
   }
-  border-bottom: solid 1px $secondary;
-  margin-bottom: 20px;
+}
+
+#main-container {
+  background-color: $primary;
+  margin-bottom: 50px;
+  padding: 30px 0;
+  @include border-radius(7px);
+  @include transition(all, 0.2s, ease-in-out);
+
+  .section-header {
+    background-color: $secondary;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    color: $main-bg;
+
+    .input-container {
+      width: 300px;
+      height: 30px;
+      margin: 10px auto;
+
+      input[type=text] {
+        height: 30px;
+        width: 274px;
+        font-size: 20px;
+        background-color: $secondary;
+        color: #fff;
+        font-weight: 100;
+        padding: 5px 0;
+        outline: 0;
+        border: 0;
+        border-bottom: solid 1px #fff;
+        display: inline-block;
+      }
+    }
+
+    .header-icon {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+
+      &.randomize {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 17px 20px;
+      }
+
+      &.search {
+        display: inline-block;
+        margin: 7px 0 7px 8px;
+      }
+    }
+  }
 }
 
 
-#pokemon-list-container {
-  float: left;
-  width: 190px;
-  height: 609px;
-  margin-right: 40px;
-  color: #fff;
-  position: relative;
+.section-main {
 
-  .input-container {
-    padding-bottom: 10px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    .pokemon-search-input {
-      display: block;
-      width: 190px;
-      height: 25px;
-    }
-  }
+  background-color: #fff;
+  padding: 20px;
 
   .pokemon-list {
-    overflow-y: auto;
-    width: 190px;
-    margin-top: 35px;
-    height: 100%;
-    height: 574px;
-
-    li {
-      padding: 10px 5px;
+    .pokemon {
+      display: inline-block;
       cursor: pointer;
+      position: relative;
+
+      .tooltip-info {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: -10px;
+        left: 0;
+        font-size: 12px;
+        line-height: 18px;
+        color: white;
+        background-color: $secondary;
+        opacity: 0;
+
+        @include border-radius(3px);
+        @include transition(all, 0.2s, ease-in-out)
+      }
+
+      &:hover {
+        .tooltip-info {
+          opacity: 1;
+          bottom: 0;
+        }
+      }
     }
   }
 }
 
-#pokemon-detail {
-  float: left;
-  width: 470px;
-  height: 609px;
-  // padding: ;
-}
-
-
 .pokemon-types {
-  .pokemon-type {
-    overflow: hidden;
-    float: left;
-    padding: 5px;
-    text-transform: uppercase;
-    border-radius: 3px;
-    margin-right: 10px;
-    color: #fff;
-    font-size: 13px;
-    width: 75px;
-    text-align: center;
-  }
 
   .normal {
     background-color: #8a8a59;

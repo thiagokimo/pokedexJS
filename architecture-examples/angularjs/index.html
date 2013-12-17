@@ -3,23 +3,30 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   </head>
   <body ng-controller="IndexCtrl">
     <div class="wrapper">
       <header>
-        <h1 class="podekexjs-title">pokedexJS</h1>
+        <h1 class="podekexjs-title">pokedex<span class="dot">.</span>js</h1>
       </header>
 
-      <div id="pokemon-list-container">
-        <div class="input-container">
-          <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Type a name, number or type">
+      <div id="main-container">
+        <div class="section-header">
+          <div class="input-container">
+            <input class="pokemon-search-input" type="text" ng-model="query" placeholder="Name, number or type">
+            <span class="header-icon search fa fa-search"></span>
+          </div>
+          <a href="" ng-click="getRandomPokemon()" class="header-icon randomize fa fa-random"></a>
         </div>
-        <a href="" ng-click="getRandomPokemon()">I'm feeling lucky</a>
-        <ul class="pokemon-list">
-          <li ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
-            <p>{{pokemon.number}} - {{pokemon.name}}</p>
-          </li>
-        </ul>
+        <div class="section-main">
+          <ul class="pokemon-list">
+            <li class="pokemon" ng-click="showPokemon(pokemon)" ng-repeat="pokemon in pokemonList | filter:query">
+              <img src="{{pokemon.sprite}}" alt="">
+              <div class="tooltip-info">{{pokemon.number}} - {{pokemon.name}}</div>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div id="pokemon-detail" ng-controller="PokemonCtrl">
@@ -32,6 +39,6 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="js/directives.js"></script>
-    <script src="../../db/pokemonDB.js"></script>
+    <script src="db/pokemonDB.js"></script>
   </body>
 </html>
